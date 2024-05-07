@@ -34,8 +34,6 @@ jobs:
         uses: actions/checkout@master
       - name: get version
         run: echo 'TAG='${GITHUB_REF#refs/tags/} >> $GITHUB_ENV
-      - name: Get GitHub organization or user
-        run: echo 'ORG='$(echo $(dirname ${GITHUB_REPOSITORY}) | awk '{print tolower($0)}') >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -77,8 +75,6 @@ jobs:
         uses: actions/checkout@master
       - name: get version
         run: echo 'TAG='${GITHUB_REF#refs/tags/} >> $GITHUB_ENV
-      - name: Get GitHub organization or user
-        run: echo 'ORG='$(echo $(dirname ${GITHUB_REPOSITORY}) | awk '{print tolower($0)}') >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -120,8 +116,6 @@ jobs:
         uses: actions/checkout@master
       - name: get version
         run: echo 'TAG='${GITHUB_REF#refs/tags/} >> $GITHUB_ENV
-      - name: Get GitHub organization or user
-        run: echo 'ORG='$(echo $(dirname ${GITHUB_REPOSITORY}) | awk '{print tolower($0)}') >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
